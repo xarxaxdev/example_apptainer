@@ -1,0 +1,10 @@
+datasets==2.13.1
+evaluate==0.4.1
+Flask==2.3.2
+numpy==1.25.1
+redis==4.6.0
+torch==2.0.1
+transformers==4.30.2
+seqeval==1.2.2
+accelerate>=0.20.1
+fsspec==2023.9.2

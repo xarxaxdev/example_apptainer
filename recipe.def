@@ -1,0 +1,30 @@
+Bootstrap: docker
+From: pytorch/pytorch
+
+%files
+    generate_model.py .
+    requirements.txt .
+
+%environment
+    export PATH="$PATH:"
+
+%post
+    echo "Installing required packages..."
+    pip3 install -r requirements.txt
+    
+%runscript
+    echo "running main script" 
+    python3 generate_model.py
+
+%help
+    To run the container:
+	apptainer run <container_name.sif>
+
+    To shell into the container:
+	apptainer shell <container_name.sif>
+
+    To execute a custom command or app:
+	apptainer exec <container_name.sif> <command or app_name>
+
+    To view the container's metadata:
+	apptainer inspect <container_name.sif>

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBATCH --nodes=1                    # on a single node
+#SBATCH --ntasks=1                   # with a single task (this should always be 1, apart from special cases)
+#SBATCH --cpus-per-task=2            # with that many cpu cores
+#SBATCH --mem=12G                    # will require that amount of RAM at maximum (if the process takes more it gets killed)
+#SBATCH --time=4-11:59               # maximum runtime of the job as "d-hh:mm"
+#SBATCH --chdir=. 					 # working directory of the job
+#SBATCH --mail-type=ALL              # always get mail notifications
+#SBATCH --output=slurm-%j.out        # standard out of the job into this file (also stderr)
+
+#SBATCH --gpus=1
+#SBATCH --mail-type=NONE 
+
+# main task to run
+apptainer run --nv img.sif
+

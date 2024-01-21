@@ -1,0 +1,8 @@
+!*/generated_models
+!*/generated_models/*/metrics.csv
+*/generated_models/*/*.bin
+*.sif
+*.out
+*.bin
+*.pt
+*.pth
